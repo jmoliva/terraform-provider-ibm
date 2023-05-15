@@ -18,14 +18,14 @@ resource "ibm_is_vpc" "vpc1" {
 resource "ibm_is_subnet" "subnet1" {
   name                     = "subnet-${random_id.name1.hex}"
   vpc                      = ibm_is_vpc.vpc1.id
-  zone                     = local.ZONE1
+  zone                     = "eu-de-1"
   total_ipv4_address_count = 256
 }
 
 resource "ibm_is_subnet" "subnet2" {
   name                     = "subnet-${random_id.name2.hex}"
   vpc                      = ibm_is_vpc.vpc1.id
-  zone                     = local.ZONE2
+  zone                     = "eu-de-2"
   total_ipv4_address_count = 256
 }
 
